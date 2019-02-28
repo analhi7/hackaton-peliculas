@@ -1,11 +1,8 @@
-/*const objPelis=[];
+const objPelis=[];
+const firstPage =document.getElementById("first-page")
 //let i=0;
 const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','E.T.The Extra-Terrestrial','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive'];
 url = 'http://www.omdbapi.com/?t=';
-
-
-
-
 
 for (let i=0; i< arrayPelis.length; i++)
 {   
@@ -16,9 +13,8 @@ for (let i=0; i< arrayPelis.length; i++)
     localStorage.setItem('data', JSON.stringify(data))
    // console.log (data); 
     objPelis.push(data);
-    console.log(objPelis);
-    return data;
-    
+    //console.log(objPelis);
+    getMovies(objPelis)
   }) 
   //console.log (data); 
 
@@ -27,10 +23,19 @@ for (let i=0; i< arrayPelis.length; i++)
 
 
 
-function getMovies() {
+function getMovies(NewArray) {
     const stringMovies = JSON.parse(localStorage.getItem('data'));
-    console.log(stringPokemon);
-    objPelis.push(stringMovies);
+    const sectionOne = firstPage;
+    sectionOne.innerHTML='';
+    NewArray.map((ObjPelis) => {
+      sectionOne.innerHTML+= `
+      <div class="nameList"><div class="rolPersonajes"><img class="splashPresentation" src="${ObjPelis.Poster}"></div></div>
+      `
+    })
+  }
+
+    // //console.log(stringPokemon);
+    // //objPelis.push(stringMovies);
     console.log(objPelis);
-    return objPelis;
-  }*/
+    
+  

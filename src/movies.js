@@ -1,4 +1,4 @@
-const objTitlePelis=[];
+/*const objTitlePelis=[];
 //let i=0;
 const titlePelis ='Get out';
 const url = 'http://www.omdbapi.com/?t=';
@@ -54,5 +54,4 @@ const viewMovies = () => { //muestra pokemon por tipo
   //console.log (data); 
 
   .catch(err => (err))
-
-
+*/
