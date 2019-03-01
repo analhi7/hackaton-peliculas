@@ -64,3 +64,26 @@ a:hover {
     color: rgba(30, 187, 187, 0.863);
     text-decoration: underline;
 }
+
+
+.btn-outline-success:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(30, 187, 187, 0.863);
+    }
+    .btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
+    color: #fff;
+    background-color: rgba(30, 187, 187, 0.863);
+    border-color: rgba(30, 187, 187, 0.863);
+    }
+    
+    .btn-outline-success.focus, .btn-outline-success:focus {
+    box-shadow: 0 0 0 0.2rem rgba(30, 187, 187, 0.863);
+    }
+    .btn-outline-success:hover {
+    color: #fff;
+    background-color: rgba(30, 187, 187, 0.863);
+    border-color: rgba(30, 187, 187, 0.863);
+    }
+    .btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(30, 187, 187, 0.863);
+    }
