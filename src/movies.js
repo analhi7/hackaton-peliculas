@@ -1,43 +1,64 @@
+<<<<<<< HEAD
 /*const objTitlePelis=[];
+=======
+let  objTitlePelis=[];
+>>>>>>> upstream/master
 //let i=0;
-const titlePelis ='Get out';
-const url = 'http://www.omdbapi.com/?t=';
+ 
+const searchMovie = document.getElementById("src-title");
+const titleMov = document.getElementById("title-mov");
+function SearchData(){    
+    const titlePelis = searchMovie.value;
+    const url = `https://www.omdbapi.com/?apikey=4c2bc917&s=${titlePelis}`;
+    fetch(url) //lectura del archivo .json
+    .then(response => response.json())
+    .then(data => {
+     const dataSearch = data.Search;
+     objTitlePelis.push(dataSearch);  
+      viewMovies(objTitlePelis);
+    }) 
+  
+   .catch(err => (err)) 
+    
+}
+titleMov.addEventListener('click',SearchData);
 
 
-const searchMovie = document.getElementById('tite-mov');
+
 const productWrapper = document.getElementById('list-movies');
-
-const viewMovies = () => { //muestra pokemon por tipo   
-    search = searchMovie.value
+const viewMovies = (objTitlePelis) => { //muestra peliculas de acuerdo a la busqueda por coincidencia   
+    let data=  objTitlePelis[0];
     let viewMovie = '';
-    for (let i in objTitlePelis) {
-      //console.log('Tipo Poekemon: ',pokemon);
-      viewMovie = viewMovie + `  
-        
-          <div class="card col-lg-3 col-md-6 col-sm-12">
-           <div class="card-body bg-dark" style="width = 20rem;">
-             <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
-             <div class="card-body">
-             <h5 id="product-name" class="card-title d-flex justify-content-center">${objTitlePelis[i].Title}</h5>
-             </div>
-           </div> 
-          </div>               
-          `
-          }
-              
-    productWrapper.innerHTML = viewMovie;
+
+    data.forEach(element => {
+        viewMovie += `          
+        <div class="card col-lg-3 col-md-6 col-sm-12">
+         <div class="card-body bg-dark" style="width = 20rem;">
+           <img src="${element.Poster}" class="card-img-top" alt="${element.Title}">
+           <div class="card-body">
+           <h5 id="product-name" class="card-title d-flex justify-content-center">${element.Title}</h5>
+           </div>
+         </div> 
+        </div>               
+        `
+    productWrapper.insertAdjacentHTML('beforeend', viewMovie);
+
+    });
+ 
     return viewMovie;
   }
-  searchMovie.addEventListener('click', viewMovies); //fin muestreo de tarjetas
+
+
+  
 
 
 
+ 
+ 
 
 
 
-
-
-
+<<<<<<< HEAD
 
 
    let url_pelis = url+titlePelis+'&apikey=4c2bc917'
@@ -55,3 +76,8 @@ const viewMovies = () => { //muestra pokemon por tipo
 
   .catch(err => (err))
 */
+=======
+ 
+
+
+>>>>>>> upstream/master
